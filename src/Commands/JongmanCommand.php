@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Soap\Jongman\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class JongmanCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-jongman';
 
     public $description = 'My command';
 

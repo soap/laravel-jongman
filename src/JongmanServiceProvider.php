@@ -20,7 +20,16 @@ class JongmanServiceProvider extends PackageServiceProvider
             ->hasConfigFile()
             ->hasViews()
             ->hasMigrations([
-                'create_laravel-jongman_table',
+                'create_schedule_layouts_table',
+                'create_time_blocks_table',
+                'create_schedules_table',
+                'add_timezone_to_users_table',
+                'create_resources_table',
+                'create_reservation_series_table',
+                'create_reservation_instances_table',
+                'create_reservation_resources_table',
+                'create_blackout_series_table',
+                'create_blackout_instances_table',
             ])
             ->hasCommand(InstallCommand::class);
     }

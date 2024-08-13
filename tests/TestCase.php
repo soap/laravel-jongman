@@ -1,6 +1,6 @@
 <?php
 
-namespace Soap\Jongman\Tests;
+namespace Soap\Jongman\Laravel\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
@@ -13,7 +13,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Soap\\Jongman\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'Soap\\Jongman\\Laravel\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
 

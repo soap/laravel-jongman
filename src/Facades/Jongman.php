@@ -1,11 +1,11 @@
 <?php
 
-namespace Soap\Jongman\Facades;
+namespace Soap\Jongman\Laravel\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Soap\Jongman\Jongman
+ * @see \Soap\Jongman\Laravel
  */
 class Jongman extends Facade
 {

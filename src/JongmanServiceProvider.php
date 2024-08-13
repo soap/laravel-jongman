@@ -1,8 +1,8 @@
 <?php
 
-namespace Soap\Jongman;
+namespace Soap\Jongman\Laravel;
 
-use Soap\Jongman\Commands\JongmanCommand;
+use Soap\Jongman\Laravel\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -19,7 +19,9 @@ class JongmanServiceProvider extends PackageServiceProvider
             ->name('jongman')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_laravel-jongman_table')
-            ->hasCommand(JongmanCommand::class);
+            ->hasMigrations([
+                'create_laravel-jongman_table',
+            ])
+            ->hasCommand(InstallCommand::class);
     }
 }

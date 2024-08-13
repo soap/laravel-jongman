@@ -1,6 +1,6 @@
 {
     "name": "soap/laravel-jongman",
-    "description": "Reservation system for Laravel",
+    "description": "JONGman Reservation system adaptation for Laravel",
     "keywords": [
         "soap",
         "laravel",
@@ -18,13 +18,14 @@
     "require": {
         "php": "^8.1",
         "spatie/laravel-package-tools": "^1.14.0",
-        "illuminate/contracts": "^10.0"
+        "soap/jongman-domain": "*",
+        "illuminate/contracts": "^10.0|^11.0"
     },
     "require-dev": {
         "laravel/pint": "^1.0",
-        "nunomaduro/collision": "^7.9",
-        "nunomaduro/larastan": "^2.0.1",
-        "orchestra/testbench": "^8.0",
+        "nunomaduro/collision": "^7.9|^8.0",
+        "larastan/larastan": "^2.0.0",
+        "orchestra/testbench": "^8.0|^9.0",
         "pestphp/pest": "^2.0",
         "pestphp/pest-plugin-arch": "^2.0",
         "pestphp/pest-plugin-laravel": "^2.0",
@@ -33,15 +34,21 @@
         "phpstan/phpstan-phpunit": "^1.0",
         "spatie/laravel-ray": "^1.26"
     },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../../../../PHP/jongman-domain"
+        }
+    ],
     "autoload": {
         "psr-4": {
-            "Soap\\Jongman\\": "src/",
-            "Soap\\Jongman\\Database\\Factories\\": "database/factories/"
+            "Soap\\Jongman\\Laravel\\": "src/",
+            "Soap\\Jongman\\Laravel\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Soap\\Jongman\\Tests\\": "tests/"
+            "Soap\\Jongman\\Laravel\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -61,10 +68,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Soap\\Jongman\\JongmanServiceProvider"
+                "Soap\\Jongman\\Laravel\\JongmanServiceProvider"
             ],
             "aliases": {
-                "Jongman": "Soap\\Jongman\\Facades\\Jongman"
+                "Jongman": "Soap\\Jongman\\Laravel\\Facades\\Jongman"
             }
         }
     },

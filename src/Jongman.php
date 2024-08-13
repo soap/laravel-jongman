@@ -1,7 +1,5 @@
 <?php
 
-namespace Soap\Jongman;
+namespace Soap\Jongman\Laravel;
 
-class Jongman
-{
-}
+class Jongman {}

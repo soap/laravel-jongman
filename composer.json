@@ -34,12 +34,6 @@
         "phpstan/phpstan-phpunit": "^1.0",
         "spatie/laravel-ray": "^1.26"
     },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "../../../../PHP/jongman-domain"
-        }
-    ],
     "autoload": {
         "psr-4": {
             "Soap\\Jongman\\Laravel\\": "src/",

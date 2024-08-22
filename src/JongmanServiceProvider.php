@@ -34,17 +34,17 @@ class JongmanServiceProvider extends PackageServiceProvider
             ->hasCommand(InstallCommand::class)
             ->publishesServiceProvider('JongmanServiceProvider')
             ->hasInstallCommand(function (InstallCommand $command) {
-                $command->startWith(function(InstallCommand $command) {
+                $command->startWith(function (InstallCommand $command) {
                     $command->info('Starting the Jongman installation process...');
                 })
-                ->publishConfigFile()
-                ->publishMigrations()
-                ->askToRunMigrations()
-                ->copyAndRegisterServiceProviderInApp()
-                ->askToStarRepoOnGithup('soap/laravel-jongman')
-                ->endWith(function(InstallCommand $command) {
-                    $command->info('Jongman installation process completed.');
-                });
+                    ->publishConfigFile()
+                    ->publishMigrations()
+                    ->askToRunMigrations()
+                    ->copyAndRegisterServiceProviderInApp()
+                    ->askToStarRepoOnGithup('soap/laravel-jongman')
+                    ->endWith(function (InstallCommand $command) {
+                        $command->info('Jongman installation process completed.');
+                    });
             });
     }
 }

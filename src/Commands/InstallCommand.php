@@ -2,8 +2,9 @@
 
 namespace Soap\Jongman\Laravel\Commands;
 
-use Carbon\Laravel\ServiceProvider;
 use Illuminate\Console\Command;
+use Illuminate\Support\ServiceProvider;
+use Laravel\Fortify\FortifyServiceProvider;
 use Symfony\Component\Console\Attribute\AsCommand;
 
 #[AsCommand(name: 'jongman:install')]
@@ -16,7 +17,7 @@ class InstallCommand extends Command
     public function handle(): int
     {
         $this->callSilent('vendor:publish', [
-            '--provider' => JongmanServiceProvider::class,
+            '--provider' => JongmanServiceProvider::class
         ]);
 
         $this->registerJongmanServiceProvider();
@@ -30,6 +31,6 @@ class InstallCommand extends Command
             return;
         }
 
-        ServiceProvider::addProviderToBootstrapFile(App\Providers\JongmanServiceProvider::class);
+        ServiceProvider::addProviderToBootstrapFile(\App\Providers\JongmanServiceProvider::class);
     }
 }

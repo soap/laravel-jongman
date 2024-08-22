@@ -31,6 +31,7 @@ class JongmanServiceProvider extends PackageServiceProvider
                 'create_blackout_series_table',
                 'create_blackout_instances_table',
             ])
-            ->hasCommand(InstallCommand::class);
+            ->hasCommand(InstallCommand::class)
+            ->publishesServiceProvider('JongmanServiceProvider');
     }
 }

@@ -51,7 +51,7 @@ class ScheduleController extends Controller
     {
         $targetTimezone = auth()->user()->timezone;
 
-        $selectedDate = $date? Carbon::parse($date, $targetTimezone) : Carbon::today()->timezone($targetTimezone);
+        $selectedDate = $date ? Carbon::parse($date, $targetTimezone) : Carbon::today()->timezone($targetTimezone);
         $selectedDate->startOfWeek($schedule->weekday_start);
 
         $weekStartDate = Date::parse($selectedDate->format('Y-m-d h:i:s'), $targetTimezone);
@@ -67,7 +67,7 @@ class ScheduleController extends Controller
         $nextDate = $weekEndDate->addDays(7 - $schedule->visible_days + 1);
         $previousDate = $weekStartDate->addDays(-1 * (7 - $schedule->visible_days + 1));
 
-        $reservationListing = new EmptyReservationListing();
+        $reservationListing = new EmptyReservationListing;
         // we need to get the reservations for the week
 
         $dailyLayout = $this->scheduleService->getDailyLayout($activeScheduleId, new ScheduleLayoutFactory($targetTimezone), $reservationListing);
